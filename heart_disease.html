@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Covid 19 Analysis</title>
+		<title>Heart Disease Prediction</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -16,7 +16,7 @@
 
 		<!-- Header -->
 			<header id="header">
-				<a class="title">Data Analytics</a>
+				<a class="title">Data Science</a>
 				<nav>
 					<ul>
 						<li><a href="index.html">Home</a></li>
@@ -30,17 +30,23 @@
 				<!-- Main -->
 					<section id="main" class="wrapper">
 						<div class="inner">
-							<h1 class="major">Covid 19 Analysis</h1>
-							<iframe title="Covid Analysis" width="1140" height="541.25" src="https://app.powerbi.com/reportEmbed?reportId=1723780f-e927-4a9b-a90f-ea343eeec6e4&autoAuth=true&ctid=68792612-0f0e-46cb-b16a-fcb82fd80cb1&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLW5vcnRoLWV1cm9wZS1nLXByaW1hcnktcmVkaXJlY3QuYW5hbHlzaXMud2luZG93cy5uZXQvIn0%3D" frameborder="0" allowFullScreen="true"></iframe>
-							<p>From the onset, there are 4 visible waves, but the fourth and most recent wave had the steepest rise and is responsible for the most cases so far. Total cases rose by 626,086 between Thursday, 30 December 2021 and Wednesday, 5 January 2021 worldwide.</p>
-							<img src="/images/covid_trends.jpg" alt="covid trends" style="width:1152px;height:648px;"><br>
-							<p>More points to note: <br>
+							<h1 class="major">Heart Disease Prediction</h1>
+							<p>This is a binary classification problem.
+							   Several features where used to train a Random Forest model including:
 								<ul>
-									<li>Total Covid cases per day are on a downward trend, falling by 44% from Monday, 7 February in 21 days,</li>
-									<li>Covid Fatality Rate is also trending downwards, falling by 71.95% in over 11 months starting Saturday, March 6, 2021,</li>
-									<li>The most fatal waves seem to be the 2nd and 3rd, which also corresponds to high numbers of hospitalizations. An anomaly in fatality rate is observed on Sunday, June 13, 2021. It had a value of 3.06%, which is outside the expected range of 1.98%-2.94%.</li>
-								</ul>
+									<li>Age</li>
+									<li>RestingBP</li>
+									<li>ST Slope</li>
+								</ul><br>
+
+								<img src="/images/data_science.jpg" alt="covid trends" style="width:509px;height:339px;"><br><br>
+
+								I used Recall as the evaluation metric in this case because I wanted to minimise the number of False Negative cases.
+								That is, patients being told that they are unlikely to have Heart Disease, whilst they are likely to have it. Recall score for the
+								fitted Random Forest model was at 93.2%. Precision was also good at 94.6% 
 							</p>
+
+							<p>I used Flask to create a web app for the model and deployed in Heroku. You can use this link to try it out. Just fill in required values and predict: <a href="https://ml-heart-disease-api.herokuapp.com/" target="_blank">Heart Disease Predictor</a></p>
                             
 						</div>
 					</section>
